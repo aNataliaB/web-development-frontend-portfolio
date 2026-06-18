@@ -1,1 +1,25 @@
+<?php
+require_once 'config.php';
 
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('location: login.php');
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="p8style.css">
+    <title>Strona Powitalna</title>
+</head>
+<body>
+    <div class="welcome">
+        <h1>Witaj, <b><?php echo htmlspecialchars($_SESSION['login']); ?></b>.<br>Jesteś zalogowany!</h1>
+        <br><br><br><br><p>
+            <a href="logout.php" class="btn btn-logout">Wyloguj się</a>
+        </p>
+    </div>
+</body>
+</html>
