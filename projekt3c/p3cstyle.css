@@ -1,0 +1,78 @@
+body {
+  background-color: lightBlue;
+}
+
+h1 {
+font-family: 'Times New Roman' , sans-serif;
+color: RoyalBlue;
+text-align: center;
+}
+form{
+font-family: 'Georgia' , sans-serif;
+}
+
+
+label {
+min-width: 50%;
+margin-bottom: 10px;
+}
+
+select {
+  width: 30%;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: beige;
+}
+
+textarea {
+  width: 50%;
+  height: 150px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid beige;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+textarea:focus{
+background-color: beige;
+}
+
+ 
+input[type="text"], input[type="date"], input[type="tel"], input[type="email"], input[type="password"] {
+width: 30%;
+padding: 12px;
+margin: 10px 0;
+box-sizing: border-box;
+border: 2px solid beige;
+border-radius: 8px;
+}
+input[type="text"]:focus, 
+input[type="date"]:focus, 
+input[type="tel"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus {
+  background-color: beige;
+}
+
+
+input[type="submit"] {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type="reset"] {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
