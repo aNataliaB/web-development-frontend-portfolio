@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="p6style.css">
+  <link rel="alternate" type="text" href="wyswietl.txt">
+  <title>Strona z formularzem</title>
+
+</head>
+
+<body>
+
+  <h1>Formularz</h1>
+
+  <form action="wyswietl.php" method="post">
+    <label for="imie">Imie:</label><br>
+    <input type="text" id="imie" name="imie"><br><br>
+
+    <label for="nazwisko">Nazwisko:</label><br>
+    <input type="text" id="nazwisko" name="nazwisko"><br><br>
+
+    <label for="dataurodzenia">Data urodzenia:</label><br>
+    <input type="date" id="dataurodzenia" name="dataurodzenia"><br><br>
+
+    <label for="plec">Płeć:</label><br><br>
+    <div class="radio-group"><input type="radio" id="k" name="plec" value="Kobieta">
+      <label for="k">Kobieta</label>
+      <input type="radio" id="m" name="plec" value="Mężczyzna">
+      <label for="m">Mężczyzna</label>
+      <input type="radio" id="w" name="plec" value="Wolę nie odpowidać">
+      <label for="w">Wolę nie odpowidać</label>
+    </div><br><br>
+
+    <label for="telefon">Numer telefonu:</label><br>
+    <input type="tel" id="telefon" name="telefon" placeholder="123 456 789"
+      pattern="[0-9]{3} [0-9]{3} [0-9]{3}"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="ulica">Ulica:</label><br>
+    <input type="text" id="ulica" name="ulica"><br><br>
+
+    <label for="miasto">Miasto:</label><br>
+    <input type="text" id="miasto" name="miasto"><br><br> <label for="wojewodztwo">Województwo:</label><br><br>
+    <select id="wojewodztwo" name="wojewodztwo">
+      <option value="dolonslaskie">dolnośląskie</option>
+      <option value="kujawsko-pomorskie">kojawsko-pomorskie</option>
+      <option value="lubelskie">lubelskie</option>
+      <option value="lodzkie">łódzkie</option>
+      <option value="malopolskie">małopolskie</option>
+      <option value="mazowieckie">mazowieckie</option>
+      <option value="opolskie">opolskie</option>
+      <option value="podkarpackie">podkarpackie</option>
+      <option value="podlaskie">podlaskie</option>
+      <option value="pomorskie">pomorskie</option>
+      <option value="slaskie">śląskie</option>
+      <option value="swietokrzyskie">świętokrzyskie</option>
+      <option value="warminsko-mazurskie">warmińsko-mazurskie</option>
+      <option value="wielkopolskie">wielkopolskie</option>
+      <option value="zachodniopomorskie">zachodniopomorskie</option>
+    </select><br><br>
+
+    <label for="prawojazdy">Czy posiadasz prawo jazdy?:</label><br>
+    <div class="radio-group"><input type="radio" id="nie" name="prawojazdy" value="Nie">
+      <label for="nie">Nie</label><br>
+      <input type="radio" id="tak" name="prawojazdy" value="Tak">
+      <label for="tak">Tak, kategorii:</label><br>
+
+      <input type="checkbox" id="kategoriaA1" name="kategorie[]" value="A1">
+      <label for="kategoriaA1"> A1</label>
+      <input type="checkbox" id="kategoriaA2" name="kategorie[]" value="A2">
+      <label for="kategoriaA2"> A2</label>
+      <input type="checkbox" id="kategoriaB1" name="kategorie[]" value="B1">
+      <label for="kategoriaB1"> B1</label>
+      <input type="checkbox" id="kategoriaB" name="kategorie[]" value="B">
+      <label for="kategoriaB"> B</label>
+      <input type="checkbox" id="kategoriaB+E" name="kategorie[]" value="B+E">
+      <label for="kategoriaB+E"> B+E</label>
+      <input type="checkbox" id="kategoriaC1" name="kategorie[]" value="C1">
+      <label for="kategoriaC1"> C1</label><br>
+      <input type="checkbox" id="kategoriaC+E" name="kategorie[]" value="C+E">
+      <label for="kategoriaC+E"> C+E</label>
+      <input type="checkbox" id="kategoriaD1" name="kategorie[]" value="D1">
+      <label for="kategoriaD1"> D1</label>
+      <input type="checkbox" id="kategoriaD" name="kategorie[]" value="D">
+      <label for="kategoriaD"> D</label>
+      <input type="checkbox" id="kategoriaD+E" name="kategorie[]" value="D+E">
+      <label for="kategoriaD+E"> D+E</label>
+      <input type="checkbox" id="kategoriaT" name="kategorie[]" value="T">
+      <label for="kategoriaT"> T</label><br><br>
+    </div>
+
+    <label for="uwagi">Uwagi:</label><br>
+    <small>Maksymalna liczba znaków:100!</small><br>
+    <textarea name="uwagi" rows="10" cols="30" maxlength="100"></textarea><br><br> <label for="haslo">Hasło:</label><br>
+    <input type="password" id="haslo" name="haslo"><br><br>
+
+    <div class="button-group">
+      <input type="submit" value="Wyślij">
+      <input type="reset" value="Wyczyść">
+    </div>
+  </form>
+
+
+</body>
+
+</html>
