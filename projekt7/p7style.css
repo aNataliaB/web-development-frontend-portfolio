@@ -1,0 +1,111 @@
+body {
+  font-family: sans-serif;
+  background-color: #b1dec2;
+  color: #333;
+  margin: 0px;
+  padding: 15px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-top: 0px;
+  text-align: center;
+  color: #eab20b;
+  font-weight: 600;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 5px 0;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex-grow: 1;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  min-width: 120px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+input[type="submit"] {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+input[name="dodaj"],
+input[name="zapisz_edycje"] {
+  background-color: #1dc745;
+}
+
+input[name="dodaj"]:hover,
+input[name="zapisz_edycje"]:hover {
+  background-color: rgb(0, 172, 0);
+}
+
+input[name="edytuj"] {
+  background-color: rgb(0, 136, 255);
+  margin-left: 20px;
+}
+
+input[name="edytuj"]:hover {
+  background-color: rgb(0, 102, 192);
+}
+
+input[name="usun"] {
+  background-color: red;
+  margin-left: 20px;
+}
+
+input[name="usun"]:hover {
+  background-color: rgb(149, 0, 0);
+}
+
+input[name="anuluj_edycje"] {
+  background-color: rgb(169, 169, 169);
+  margin-left: 10px;
+}
+
+input[name="anuluj_edycje"]:hover {
+  background-color: rgb(118, 118, 118);
+}
+
+form:has(input[name="zapisz_edycje"]) {
+  background-color: #dae9f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  display: block;
+}
