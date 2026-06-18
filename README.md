@@ -13,7 +13,7 @@ Every directory represents an independent milestone in building core modern web 
 **`projekt2b` (Image Gallery Asset Management):** Media components optimization, scaling ratios control, and clean graphical document structures.
 **`projekt2c` (Interactive Form Submissions):** Complex user input layouts mapping dedicated input types (text, email, radio, checkbox) designed for validation routines.
 
-* ### Module 3: Visual Presentation & Layout Systems (CSS3)
+### Module 3: Visual Presentation & Layout Systems (CSS3)
 **`projekt3a`, `projekt3b`, `projekt3c` (CSS Architecture):** Mirroring the structures from Module 2, these projects apply customized CSS styling layers. Features focus on cascade specificity, element box modeling, custom border properties, margins configuration, and color palettes alignment.
 
 ### Module 4: Client-Side Logic & Applications
