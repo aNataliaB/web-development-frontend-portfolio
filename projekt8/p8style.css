@@ -1,0 +1,148 @@
+body {
+  font-family: sans-serif;
+  background-color: #e9eef2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+
+.wrapper {
+  width: 350px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  text-align: left;
+}
+
+h2 {
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+  border-bottom: 2px solid #337ab7;
+  padding-bottom: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #337ab7;
+  outline: none;
+  box-shadow: 0 0 5px rgba(51, 122, 183, 0.5);
+}
+
+.form-group.has-error .form-control {
+  border-color: #d9534f;
+}
+
+.help-block {
+  color: #d9534f;
+  font-size: 0.9em;
+  margin-top: 5px;
+  display: block;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, box-shadow 0.3s;
+}
+
+.btn-login {
+  background-color: #337ab7;
+}
+
+.btn-login:hover {
+  background-color: #286090;
+  box-shadow: 0 2px 8px rgba(40, 96, 144, 0.4);
+}
+
+.btn-register {
+  background-color: #5cb85c;
+}
+
+.btn-register:hover {
+  background-color: #4cae4c;
+  box-shadow: 0 2px 8px rgba(76, 174, 76, 0.4);
+}
+
+.btn-logout {
+  background-color: #d9534f;
+}
+
+.btn-logout:hover {
+  background-color: #c9302c;
+  box-shadow: 0 2px 8px rgba(201, 48, 44, 0.4);
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.welcome {
+  padding: 50px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.welcome h1 {
+  color: #333;
+  font-size: 2em;
+}
+
+.welcome b {
+  color: #337ab7;
+}
+
+p {
+  text-align: center;
+}
+
+.wrapper p a {
+  color: #337ab7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.wrapper p a:hover {
+  color: #286090;
+}
