@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="p7style.css">
+    <link rel="alternate" type="text" href="p7.txt">
+    <title>Baza Studentów</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Baza Studentów</h1>
+
+        <?php
+       session_start();
+        $connection = mysqli_connect('localhost', 'natalia_user', 'BazyNatalia5.', 'nataliaba');
+
+        if (isset($_POST["dodaj"])) {
+            $imie = mysqli_real_escape_string($connection, $_POST["imie"]);
+            $nazwisko = mysqli_real_escape_string($connection, $_POST["nazwisko"]);
+            $wiek = mysqli_real_escape_string($connection, $_POST["wiek"]);
+            $sql = "INSERT INTO student(imie,nazwisko,wiek) VALUES('$imie','$nazwisko','$wiek')";
+            $wynik = mysqli_query($connection, $sql); 
+            if (!$wynik) {
+                echo "Błąd dodawania studenta: " . mysqli_error($connection);
+            }
+        }
+
+        if (isset($_POST["usun"])){
+            $id = $_POST["id"];
+            $sql = "delete from student where id=".$id;
+            $wynik2 = mysqli_query($connection, $sql);
+            if (!$wynik2) {
+                echo "Błąd usuwania studenta: " . mysqli_error($connection);
+            }
+        }
+
+        if(isset($_POST["edytuj"])){
+            $_SESSION['edit_id'] = (int)$_POST["id"];
+            header("Location: p7.php"); 
+            exit;
+        }
+       if(isset($_POST["zapisz_edycje"]) && isset($_POST["edit_id_field"])){
+            $id = (int)$_POST["edit_id_field"];
+            $imie = mysqli_real_escape_string($connection, $_POST["imie_edit"]);
+            $nazwisko = mysqli_real_escape_string($connection, $_POST["nazwisko_edit"]);
+            $wiek = mysqli_real_escape_string($connection, $_POST["wiek_edit"]);
+            
+            $sql = "UPDATE student SET imie='$imie', nazwisko='$nazwisko', wiek='$wiek' WHERE id='$id'";
+            $wynik3 = mysqli_query($connection, $sql);
+            
+            if (!$wynik3) {
+                echo "Błąd aktualizacji studenta: " . mysqli_error($connection);
+            } else {
+                echo "Student o ID $id zaktualizowany pomyślnie.";
+            }
+            
+            unset($_SESSION['edit_id']);
+            header("Location: p7.php");
+            exit;
+        }
+
+        $sql="SELECT * FROM student";
+        $wynik = mysqli_query($connection, $sql); 
+        $edit_id = isset($_SESSION['edit_id']) ? $_SESSION['edit_id'] : 0;
+
+        while($linia=mysqli_fetch_array($wynik))
+        {
+            echo "<hr>";
+            
+            if ($linia['id'] == $edit_id) {
+                echo "<form action='p7.php' method='post'>";
+                echo "ID: " . $linia['id'] . "<br>";
+                echo "Imię: <input type='text' name='imie_edit' value='".htmlspecialchars($linia['imie'])."' required><br>";
+                echo "Nazwisko: <input type='text' name='nazwisko_edit' value='".htmlspecialchars($linia['nazwisko'])."' required><br>";
+                echo "Wiek: <input type='number' name='wiek_edit' value='".htmlspecialchars($linia['wiek'])."' required><br>";
+                
+                echo "<input type='hidden' name='edit_id_field' value='".$linia['id']."'>";
+                echo "<input type='submit' name='zapisz_edycje' value='Zapisz zmiany'>";
+                echo "<input type='submit' name='anuluj_edycje' value='Anuluj'>"; 
+                echo "</form>";
+                
+            } else {
+                echo "<form action='p7.php' method='post' style='display:inline;'>";
+                echo $linia['id']." ".htmlspecialchars($linia['imie'])." ".htmlspecialchars($linia['nazwisko'])." ".htmlspecialchars($linia['wiek']);
+                
+                echo "<input type='submit' name='usun' value='Usuń'>"; 
+                echo "<input type='hidden' name='id' value='".$linia['id']."'>";
+                echo "<input type='submit' name='edytuj' value='Edytuj'>";
+                echo "</form>";
+            }
+        }
+
+        if(isset($_POST['anuluj_edycje'])){
+            unset($_SESSION['edit_id']);
+            header("Location: p7.php");
+            exit;
+        }          
+        
+          mysqli_close($connection);
+        ?>
+
+        <form action="p7.php" method="POST">
+        <input type="text" name="imie" placeholder ="Imię" required>
+        <input type="text" name="nazwisko" placeholder ="Nazwisko" required>
+        <input type="text" name="wiek" placeholder ="Wiek" required>
+        <input type="submit" name="dodaj" value="Dodaj">
+        </form>
+        
+    </div>
+</body>
+</html>
