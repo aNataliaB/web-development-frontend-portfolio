@@ -1,0 +1,14 @@
+body {
+background-color: MistyRose;
+}
+
+h1 {
+color: MediumVioletRed;
+text-align: center;
+font-family: Courier New, sans-serif;
+}
+table{
+font-family: Garamond, Arial;
+border-collapse: separate;
+border-spacing: 20px; 
+}
